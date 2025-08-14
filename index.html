@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Jersey Hub - Home</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+
+<body>
+
+    <header class="header">
+        <div class="logo">The Jersey Hub</div>
+        <nav class="nav-menu">
+            <a href="index.html" class="active">Home</a>
+            <a href="products.html">Products</a>
+            <a href="about.html">About Us</a>
+            <a href="cart.html">Cart</a>
+        </nav>
+    </header>
+
+    <main>
+
+        <section class="hero-carousel">
+            <div class="hero-slide active">
+                <img src="C:\Users\ADMIN\Desktop\the-jersey-hub\image\football2.jpg" alt="New Football Jersey" class="hero-bg">
+                <div class="hero-text">
+                    <h1>Score Big with Our New Jerseys</h1>
+                    <p>Discover the latest designs for the new season.</p>
+                    <a href="products.html" class="cta-btn">Shop Football Jerseys</a>
+                </div>
+            </div>
+            <div class="hero-slide">
+                <img src="C:\Users\ADMIN\Desktop\the-jersey-hub\image\football3.jpg" alt="New Basketball Jersey" class="hero-bg">
+                <div class="hero-text">
+                    <h1>Hoops Fever Is Here</h1>
+                    <p>Show your support with our new basketball collection.</p>
+                    <a href="products.html" class="cta-btn">Shop Basketball Jerseys</a>
+                </div>
+            </div>
+            <div class="hero-slide">
+                <img src="C:\Users\ADMIN\Desktop\the-jersey-hub\image\fotball.jpg" alt="Custom Jersey" class="hero-bg">
+                <div class="hero-text">
+                    <h1>Create Your Own Legacy</h1>
+                    <p>Design a custom jersey for your team or for yourself.</p>
+                    <a href="products.html" class="cta-btn">Create Custom Jerseys</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="container">
+            <h2 class="section-title">Shop By Collections</h2>
+            <div class="category-grid">
+                <a href="on-sale-jersey.html" class="category-item big-sale-card">
+                    <img src="C:\Users\ADMIN\Desktop\the-jersey-hub\image\t29.jpg" alt="Big Sale" class="category-image">
+                    <div class="category-title">
+                        <h3>BIG SALE</h3>
+                        <p>Clearance Sale</p>
+                    </div>
+                </a>
+                <a href="premium-retro.html" class="category-item">
+                    <img src="C:\Users\ADMIN\Desktop\the-jersey-hub\image\r16.jpg" alt="Premium Retro">
+                    <h3 class="category-title">Premium Retro</h3>
+                </a>
+            </div>
+        </section>
+
+        <section class="container">
+            <h2 class="section-title">Featured Products</h2>
+            <div class="product-grid">
+                <div class="product-card">
+                    <img src="C:\Users\ADMIN\Desktop\the-jersey-hub\image\r6.jpg" alt="Product 1">
+                    <div class="card-content">
+                        <h3>Classic Football Jersey</h3>
+                        <p>INR 1300</p>
+                        <button class="add-to-cart-btn">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="C:\Users\ADMIN\Desktop\the-jersey-hub\image\a2.jpg" alt="Product 2">
+                    <div class="card-content">
+                        <h3>new-season-set</h3>
+                        <p>INR 649</p>
+                        <button class="add-to-cart-btn">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="C:\Users\ADMIN\Desktop\the-jersey-hub\image\t40.jpg" alt="Product 3">
+                    <div class="card-content">
+                        <h3>Custom Team Jersey</h3>
+                        <p>INR 500</p>
+                        <button id="add-to-cart-modal-btn" class="add-to-cart-btn">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Instagram Section -->
+        <section class="container instagram-section">
+            <h2 class="section-title">Instagram Page <i class="fab fa-instagram"></i></h2>
+            <p class="subtitle">See what we are selling!</p>
+            <div class="video-grid">
+                <div class="video-item">
+                    <a href="https://www.instagram.com/p/DMac79CoPzE/" target="_blank">
+                        <img src="https://i.ibb.co/x70tP7n/DMac79CqPzE.webp" alt="Barcelona Jersey Review">
+                        <div class="play-icon"><i class="fas fa-play"></i></div>
+                    </a>
+                </div>
+                <div class="video-item">
+                    <a href="https://www.instagram.com/p/DMac79CoPzE/" target="_blank">
+                        <img src="https://i.ibb.co/z5N0Cjn/DLpXVEaL7ph.webp" alt="Ronaldo Al Nassr Jersey Review">
+                        <div class="play-icon"><i class="fas fa-play"></i></div>
+                    </a>
+                </div>
+                <div class="video-item">
+                    <a href="https://www.instagram.com/p/DLhYs6OvlS1/" target="_blank">
+                        <img src="https://i.ibb.co/4gG2F3L/DLnYss6OVIS1.webp" alt="Messi PSG Jersey Review">
+                        <div class="play-icon"><i class="fas fa-play"></i></div>
+                    </a>
+                </div>
+               
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2025 The Jersey Hub. All rights reserved.</p>
+    </footer>
+
+    <script>
+        let slideIndex = 0;
+        const slides = document.querySelectorAll('.hero-slide');
+        const totalSlides = slides.length;
+
+        function showSlide(n) {
+            slides.forEach(slide => slide.classList.remove('active'));
+            slides[n].classList.add('active');
+        }
+
+        function nextSlide() {
+            slideIndex = (slideIndex + 1) % totalSlides;
+            showSlide(slideIndex);
+        }
+
+        showSlide(slideIndex);
+        setInterval(nextSlide, 2000);
+    </script>
+
+</body>
+</html>
