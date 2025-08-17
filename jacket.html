@@ -1,139 +1,139 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Jersey Hub - Jackets</title>
-    <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Jersey Hub - Jackets</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-    <header class="header">
-        <div class="logo">The Jersey Hub</div>
-        <nav class="nav-menu">
-            <a href="index.html">Home</a>
-            <a href="products.html">Products</a>
-            <a href="about.html">About Us</a>
-            <a href="cart.html">Cart</a>
-        </nav>
-    </header>
+    <header class="header">
+        <div class="logo">The Jersey Hub</div>
+        <nav class="nav-menu">
+            <a href="index.html">Home</a>
+            <a href="products.html">Products</a>
+            <a href="about.html">About Us</a>
+            <a href="cart.html">Cart</a>
+        </nav>
+    </header>
 
-    <main>
-        <section class="container">
-            <h2 class="section-title">Jacket Collection</h2>
-            <div class="product-grid" id="jacket-products">
-                </div>
-        </section>
-    </main>
+    <main>
+        <section class="container">
+            <h2 class="section-title">Jacket Collection</h2>
+            <div class="product-grid" id="jacket-products">
+                </div>
+        </section>
+    </main>
 
-    <footer class="footer">
-        <p>&copy; 2025 The Jersey Hub. All rights reserved.</p>
-    </footer>
+    <footer class="footer">
+        <p>&copy; 2025 The Jersey Hub. All rights reserved.</p>
+    </footer>
 
-    <div id="productModal" class="modal">
-        <div class="modal-content">
-            <span class="close-btn">&times;</span>
-            <div class="modal-body">
-                <div class="modal-image">
-                    <img id="modal-product-img" src="" alt="Product Image">
-                </div>
-                <div class="modal-details">
-                    <h3 id="modal-product-title"></h3>
-                    <p id="modal-product-price" class="product-price"></p>
-                    <p id="modal-product-desc"></p>
-                    <div class="options-container">
-                        <div class="option-group">
-                            <label for="modal-size-select">Size:</label>
-                            <select id="modal-size-select" class="product-select">
-                                <option value="S">S</option>
-                                <option value="M">M</option>
-                                <option value="L">L</option>
-                                <option value="XL">XL</option>
-                                <option value="XXL">XXL</option>
-                            </select>
-                        </div>
-                        <div class="option-group">
-                            <label for="modal-quantity-input">Quantity:</label>
-                            <input type="number" id="modal-quantity-input" class="product-input" value="1" min="1">
-                        </div>
-                    </div>
-                    <button id="add-to-cart-modal-btn" class="add-to-cart-btn">Add to Cart</button>
-                </div>
-            </div>
-        </div>
-    </div>
+    <div id="productModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <div class="modal-body">
+                <div class="modal-image">
+                    <img id="modal-product-img" src="" alt="Product Image">
+                </div>
+                <div class="modal-details">
+                    <h3 id="modal-product-title"></h3>
+                    <p id="modal-product-price" class="product-price"></p>
+                    <p id="modal-product-desc"></p>
+                    <div class="options-container">
+                        <div class="option-group">
+                            <label for="modal-size-select">Size:</label>
+                            <select id="modal-size-select" class="product-select">
+                                <option value="S">S</option>
+                                <option value="M">M</option>
+                                <option value="L">L</option>
+                                <option value="XL">XL</option>
+                                <option value="XXL">XXL</option>
+                            </select>
+                        </div>
+                        <div class="option-group">
+                            <label for="modal-quantity-input">Quantity:</label>
+                            <input type="number" id="modal-quantity-input" class="product-input" value="1" min="1">
+                        </div>
+                    </div>
+                    <button id="add-to-cart-modal-btn" class="add-to-cart-btn">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const products = [];
-            for (let i = 1; i <= 9; i++) {
-                products.push({
-                    id: i,
-                    image: `j${i}.jpg`,
-                    title: `Jacket ${i}`,
-                    price: 2100,
-                    description: `This is a high-quality jacket, perfect for any weather. Crafted with care to ensure durability and comfort.`
-                });
-            }
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const products = [];
+            for (let i = 1; i <= 9; i++) {
+                products.push({
+                    id: i,
+                    image: `j${i}.jpg`,
+                    title: `Jacket ${i}`,
+                    price: 2100,
+                    description: `This is a high-quality jacket, perfect for any weather. Crafted with care to ensure durability and comfort.`
+                });
+            }
 
-            const productGrid = document.getElementById('jacket-products');
-            products.forEach(product => {
-                const productCard = document.createElement('div');
-                productCard.className = 'product-card';
-                productCard.setAttribute('data-id', product.id);
-                productCard.innerHTML = `
-                    <img src="${product.image}" alt="${product.title}">
-                    <div class="card-content">
-                        <h3>${product.title}</h3>
-                        <p>INR ${product.price}</p>
-                    </div>
-                `;
-                productGrid.appendChild(productCard);
+            const productGrid = document.getElementById('jacket-products');
+            products.forEach(product => {
+                const productCard = document.createElement('div');
+                productCard.className = 'product-card';
+                productCard.setAttribute('data-id', product.id);
+                productCard.innerHTML = `
+                    <img src="${product.image}" alt="${product.title}">
+                    <div class="card-content">
+                        <h3>${product.title}</h3>
+                        <p>INR ${product.price}</p>
+                    </div>
+                `;
+                productGrid.appendChild(productCard);
 
-                productCard.addEventListener('click', () => showModal(product));
-            });
+                productCard.addEventListener('click', () => showModal(product));
+            });
 
-            const modal = document.getElementById('productModal');
-            const closeBtn = document.querySelector('.close-btn');
+            const modal = document.getElementById('productModal');
+            const closeBtn = document.querySelector('.close-btn');
 
-            closeBtn.addEventListener('click', () => modal.style.display = 'none');
-            window.addEventListener('click', (e) => {
-                if (e.target === modal) {
-                    modal.style.display = 'none';
-                }
-            });
+            closeBtn.addEventListener('click', () => modal.style.display = 'none');
+            window.addEventListener('click', (e) => {
+                if (e.target === modal) {
+                    modal.style.display = 'none';
+                }
+            });
 
-            function showModal(product) {
-                document.getElementById('modal-product-img').src = product.image;
-                document.getElementById('modal-product-title').innerText = product.title;
-                document.getElementById('modal-product-price').innerText = `INR ${product.price}`;
-                document.getElementById('modal-product-desc').innerText = product.description;
+            function showModal(product) {
+                document.getElementById('modal-product-img').src = product.image;
+                document.getElementById('modal-product-title').innerText = product.title;
+                document.getElementById('modal-product-price').innerText = `INR ${product.price}`;
+                document.getElementById('modal-product-desc').innerText = product.description;
 
-                const addToCartBtn = document.getElementById('add-to-cart-modal-btn');
-                addToCartBtn.onclick = () => {
-                    const size = document.getElementById('modal-size-select').value;
-                    const quantity = parseInt(document.getElementById('modal-quantity-input').value);
+                const addToCartBtn = document.getElementById('add-to-cart-modal-btn');
+                addToCartBtn.onclick = () => {
+                    const size = document.getElementById('modal-size-select').value;
+                    const quantity = parseInt(document.getElementById('modal-quantity-input').value);
 
-                    const cartItem = {
-                        id: product.id,
-                        title: product.title,
-                        image: product.image,
-                        price: product.price,
-                        size: size,
-                        quantity: quantity
-                    };
+                    const cartItem = {
+                        id: product.id,
+                        title: product.title,
+                        image: product.image,
+                        price: product.price,
+                        size: size,
+                        quantity: quantity
+                    };
 
-                    const existingCart = JSON.parse(localStorage.getItem('cartItems')) || [];
-                    existingCart.push(cartItem);
-                    localStorage.setItem('cartItems', JSON.stringify(existingCart));
+                    const existingCart = JSON.parse(localStorage.getItem('cartItems')) || [];
+                    existingCart.push(cartItem);
+                    localStorage.setItem('cartItems', JSON.stringify(existingCart));
 
-                    alert(`Added ${quantity} of ${product.title} (Size: ${size}) to cart!`);
-                    window.location.href = 'cart.html';
-                };
+                    alert(`Added ${quantity} of ${product.title} (Size: ${size}) to cart!`);
+                    window.location.href = 'cart.html';
+                };
 
-                modal.style.display = 'block';
-            }
-        });
-    </script>
+                modal.style.display = 'block';
+            }
+        });
+    </script>
 </body>
 </html>
